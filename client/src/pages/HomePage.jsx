@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import AppHeader from "../components/AppHeader";
 import products from "../data/products.js";
+import React from "react";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -12,11 +13,11 @@ function HomePage() {
       <div className="product-list">
         {products.map((product) => {
           return (
-            <div className="product">
+            <div className="product" key={product.id}>
               <div className="product-preview">
                 <img
-                  src="https://via.placeholder.com/250/250"
-                  alt="some product"
+                  src={product.image}//"https://via.placeholder.com/250/250"
+                  alt={product.name}//"some product"
                   width="250"
                   height="250"
                 />
